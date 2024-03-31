@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 700px;
+        }
+        .header{
+            width: 100%;
+            height: 30px;
+            border-bottom: 2px solid red;
+            margin: 20px;
+          
+
+        }
+        .thongtin{
+            width: 40%;
+            float: left;
+            padding: 20px;
+        }
+        .thongtin>p{
+            color: darkgray;
+        }
+        .main{
+            width: 60%;
+            height: 100px;
+            float: left;
+        }
+
+        /* css form */
+        input[type=text],
+        input[type=email],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 20%;
+            background-color: #48ace6;
+            color: rgb(255, 255, 255);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #255ce8;
+        }
+
+        .main>div {
+            border-radius: 5px;
+            padding: 20px;
+
+        }
+        #span{color: rgb(3, 123, 244);
+        padding: 100px;}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>LIÊN HỆ</h2>
+        </div>
+        <div class="thongtin">
+            <br>
+            <span>Thông tin</span>
+            <br>
+            <br>
+            <p>153 Nam Cao phường Tân Phú quận 9 TP Thủ Đức</p>
+            <br>
+            <p>abc@gmail.com</p>
+            <br>
+            <p>0123456789</p>
+        </div>
+        <div class="main">
+            <span id="span">Hãy liên lạc với chúng tôi bất cứ khi nào !!</span>
+            <div>
+                <form action="/action_page.php">
+                  <input type="text" id="hoten" name="hoten" placeholder="Họ và tên">
+              
+                  <input type="email" id="email" name="email" placeholder="Địa chỉ email">
+              
+                  <input type="text" id="tieude" name="tieude" placeholder="Tiêu đề bài viết">
+
+                  <textarea name="noidung" id="noidung" cols="30" rows="10" placeholder="Nội dung cần gửi"></textarea>
+              
+                  <input type="submit" value="Gửi tin nhắn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+    
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Ngăn chặn hành động mặc định của form
+    
+                // Lấy giá trị từ các trường input
+                const hoTen = document.getElementById("hoten").value;
+                const email = document.getElementById("email").value;
+                const tieuDe = document.getElementById("tieude").value;
+                const noiDung = document.getElementById("noidung").value;
+    
+                // Hiển thị thông tin trong một cửa sổ alert
+                const message = `
+                Họ và tên: ${hoTen}
+                Email: ${email}
+                Tiêu đề: ${tieuDe}
+                Nội dung: ${noiDung}
+                `;
+                alert(message);
+            });
+        });
+    </script>
+    
+</body>
+</html>
